@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aastha Thakur - Resume</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      background: #f8f8fb;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #6a5acd;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin: 0.5rem 0; }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #6a5acd;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+      cursor: pointer;
+    }
+
+    .content { display: none; margin-top: 1rem; }
+    .content.show { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #6a5acd;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Dark Mode */
+    body.dark {
+      background: #1e1e2e;
+      color: #eee;
+    }
+    body.dark header, body.dark footer {
+      background: #4b0082;
+    }
+    body.dark h2 { color: #b19cd9; }
+    body.dark .card { background: #2a2a40; color: #eee; }
+
+    /* Buttons */
+    .btn-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: white;
+      color: #6a5acd;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-toggle:hover { background: #eee; }
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #6a5acd;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    @media(max-width:768px){ .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aastha Thakur</h1>
+    <p>B.Sc. Agriculture Student | Sustainable Farming Enthusiast</p>
+    <p>📞 7321977084 | 📧 pastha457@gmail.com</p>
+    <button class="btn-toggle" onclick="toggleDarkMode()">🌙 Dark</button>
+  </header>
+
+  <section>
+    <h2 onclick="toggleSection(this)">About Me</h2>
+    <div class="content">
+      <p>
+        I am Aastha Thakur, a B.Sc. Agriculture student at BHU South Campus, with a strong interest in sustainable
+        farming, crop production, and rural development. I have gained practical experience through fieldwork and
+        internships, and I am eager to apply my knowledge to real-world agricultural challenges.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Education</h2>
+    <div class="content">
+      <div class="grid">
+        <div class="card">
+          <h3>Secondary Education</h3>
+          <p>Nagarjuna Academy – completed 10th</p>
+        </div>
+        <div class="card">
+          <h3>Graduation</h3>
+          <p>4th Year B.Sc Agriculture, BHU South Campus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Experience</h2>
+    <div class="content">
+      <div class="card">
+        <h3>Food Processing Intern</h3>
+        <ul>
+          <li>Hands-on internship in food processing</li>
+          <li>Experience in quality control, production techniques, and food safety</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Skills</h2>
+    <div class="content grid">
+      <div class="card">
+        <h3>Languages</h3>
+        <ul><li>English</li><li>Hindi</li></ul>
+      </div>
+      <div class="card">
+        <h3>Computer Skills</h3>
+        <ul><li>Text Processing</li><li>Spreadsheets</li><li>Slide Presentation</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Extra-Curricular</h2>
+    <div class="content">
+      <div class="card">
+        <h3>NSS Volunteer</h3>
+        <ul>
+          <li>Community service, health awareness, social responsibility</li>
+          <li>Cleanliness drives, blood donation camps, outreach</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Interests</h2>
+    <div class="content">
+      <ul>
+        <li>Food technology and innovation</li>
+        <li>Sustainable agriculture and processing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 onclick="toggleSection(this)">Career Objective</h2>
+    <div class="content">
+      <p>
+        Dedicated Agriculture graduate aiming to leverage academic knowledge and internship experience in agricultural 
+        research and development. Committed to advancing sustainable agriculture practices through scientific methods 
+        and technology.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Aastha Thakur | Designed with 💜</p>
+  </footer>
+
+  <button id="backToTop" onclick="scrollToTop()">⬆</button>
+
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    // Expand/Collapse sections
+    function toggleSection(el) {
+      let content = el.nextElementSibling;
+      content.classList.toggle("show");
+    }
+
+    // Fade-in on scroll
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    });
+
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.scrollTop > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
